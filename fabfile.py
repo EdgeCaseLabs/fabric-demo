@@ -7,11 +7,13 @@ env.use_ssh_config = True
 SLACK_WEBHOOK = "https://hooks.slack.com/services/..."
 SLACK_ROOM = "#edgecaselabs"
 
+
 def production():
-    env.hosts = ['ecl',]
-    #env.hosts = ['ecl', 'ecl2',]
+    #env.hosts = ['ecl',]
+    env.hosts = ['ecl', 'ecl2',]
 
 def deploy():
+    #local('whoami')
     run('whoami')
 
 def clone():
@@ -94,15 +96,15 @@ def notify_slack(message):
 from fabric.contrib import django
 
 django.project('webapp')
-from widgets.models import Widget
+from widgets import models
 
 def print_instances():
-    for instance in Widget.objects.all():
+    for instance in models.Widget.objects.all():
         print("%s: %s" % (instance.id, instance))
 
 def widgets():
-    with workon('~/webapps/fabric_demo/myproject'):
-        run('fab print_instances')
+    with cd('~/webapps/fabric_demo/myproject'):
+        workon('fab print_instances')
 
 
 def workon(command, **kwargs):
@@ -120,3 +122,20 @@ def reset():
 
 
 from fabric.contrib.files import *
+
+
+#
+# from fabric.api import task, run
+#
+# @task
+# def mytask():
+#     run("a command")
+#
+#
+# def do_something_else():
+#     #do stuff!
+#     pass
+#
+# @task(alias='dwm')
+# def deploy_with_migrations():
+#     pass
