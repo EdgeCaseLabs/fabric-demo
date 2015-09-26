@@ -10,7 +10,7 @@ def load_data(apps, schema_editor):
 
     c = loaddata.Command()
     c.handle('widgets/fixtures/users.json', **{'database':DEFAULT_DB_ALIAS, 'verbosity': 0, 'ignore': False})
-    c.handle('widgets/fixtures/lists.json', **{'database':DEFAULT_DB_ALIAS, 'verbosity': 0, 'ignore': False})
+    c.handle('widgets/fixtures/widgets.json', **{'database':DEFAULT_DB_ALIAS, 'verbosity': 0, 'ignore': False})
 
 def fake_reverse(apps, schema_editor):
     pass
