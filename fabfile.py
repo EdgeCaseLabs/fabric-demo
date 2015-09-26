@@ -8,7 +8,8 @@ SLACK_WEBHOOK = "https://hooks.slack.com/services/..."
 SLACK_ROOM = "#edgecaselabs"
 
 def production():
-    env.hosts = ['ecl', 'ecl2',]
+    env.hosts = ['ecl',]
+    #env.hosts = ['ecl', 'ecl2',]
 
 def deploy():
     run('whoami')
@@ -97,9 +98,10 @@ from widgets.models import Widget
 
 def print_instances():
     for instance in Widget.objects.all():
-        print(instance)
+        print("%s: %s" % (instance.id, instance))
 
-
+def widgets():
+    run('fab print_instances')
 
 
 
