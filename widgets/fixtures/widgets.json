@@ -1,0 +1,30 @@
+[
+  {
+    "fields": {
+      "name": "test 1"
+    },
+    "model": "widgets.widget",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "name": "widget 2"
+    },
+    "model": "widgets.widget",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "name": "super widget"
+    },
+    "model": "widgets.widget",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "name": "lame widget"
+    },
+    "model": "widgets.widget",
+    "pk": 4
+  }
+]

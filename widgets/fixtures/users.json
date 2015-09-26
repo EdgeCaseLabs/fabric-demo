@@ -1,0 +1,20 @@
+[
+  {
+    "fields": {
+      "username": "westhomas",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2015-09-26T18:33:01.624Z",
+      "groups": [],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$20000$jj7gOr276H9V$rU7AL0fty4Ci7UqpMnSWdcVCVZlpR1I26EePDU+HeSw=",
+      "email": "westhomas@edgecaselabs.com",
+      "date_joined": "2015-09-26T18:32:52.268Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+  }
+]

@@ -8,8 +8,7 @@ SLACK_WEBHOOK = "https://hooks.slack.com/services/..."
 SLACK_ROOM = "#edgecaselabs"
 
 def production():
-    #env.hosts = ['ecl', 'ecl2',]
-    env.hosts = ['ecl']
+    env.hosts = ['ecl', 'ecl2',]
 
 def deploy():
     run('whoami')
@@ -22,11 +21,13 @@ def checkout(branch=None):
     with cd('~/webapps/fabric_demo/myproject'):
         run('git checkout %s' % branch)
 
+@parallel(pool_size=5)
 def pull():
     with cd('~/webapps/fabric_demo/myproject'):
         run('git pull')
         #sudo('git pull', user='webapp')
 
+@runs_once
 def migrate():
     with cd('~/webapps/fabric_demo/myproject'):
         run('python3.4 manage.py migrate')
@@ -111,3 +112,6 @@ def reset():
     if confirm('Are you sure?'):
         with cd('~/webapps/fabric_demo'):
             run('./reset.sh')
+
+
+from fabric.contrib.files import *

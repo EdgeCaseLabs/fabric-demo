@@ -1,3 +1,10 @@
 from django.contrib import admin
+from widgets.models import Widget
 
-# Register your models here.
+
+class WidgetAdmin(admin.ModelAdmin):
+    pass
+
+
+
+admin.site.register(Widget, WidgetAdmin)
