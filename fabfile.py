@@ -101,9 +101,12 @@ def print_instances():
         print("%s: %s" % (instance.id, instance))
 
 def widgets():
-    run('fab print_instances')
+    with workon('~/webapps/fabric_demo/myproject'):
+        run('fab print_instances')
 
 
+def workon(command, **kwargs):
+    run("workon %s && %s" % ('fabric', command), **kwargs)
 
 
 
