@@ -1,5 +1,5 @@
 ## PyTexas 2015 Presentation
-https://www.youtube.com/watch?v=ZpZkKbZwPoA
+http://bit.ly/1NCGJzx
 
 ## Slidedeck
-http://slides.com/westhomas/fabricdeployments
+http://bit.ly/1G9ZTtQ
